@@ -1,0 +1,68 @@
+{
+    "DisksController.index": {
+        "name": "DisksController.index",
+        "url": "api/disks",
+        "description": "Listar discos",
+        "action": "GET"
+    },
+    "DisksController.store": {
+        "name": "DisksController.store",
+        "url": "api/disks",
+        "description": "Crear discos",
+        "action": "POST"
+    },
+    "FilesController.index": {
+        "name": "FilesController.index",
+        "url": "api/files",
+        "description": "Listar archivos",
+        "action": "GET"
+    },
+    "FilesController.store": {
+        "name": "FilesController.store",
+        "url": "api/files",
+        "description": "Crear Archivo",
+        "action": "GET"
+    },
+    "FilesController.show": {
+        "name": "FilesController.show",
+        "url": "api/files/:id",
+        "description": "Obtener Archivo",
+        "action": "GET"
+    },
+    "FilesController.update": {
+        "name": "FilesController.update",
+        "url": "api/files/:id",
+        "description": "Actualizar Archivo",
+        "action": "PUT"
+    },
+    "FilesController.delete": {
+        "name": "FilesController.delete",
+        "url": "api/files/:id",
+        "description": "Eliminar Archivo",
+        "action": "DELETE"
+    },
+    "FilesController.binary": {
+        "name": "FilesController.binary",
+        "url": "api/files/:id/binary",
+        "description": "Obtener Archivo en binario",
+        "action": "GET"
+    },
+    "FilesController.enabledLinkPublic": {
+        "name": "FilesController.enabledLinkPublic",
+        "url": "api/files/:id/enabledLinkPublic",
+        "description": "activar link público del archivo",
+        "action": "PUT"
+    },
+    "FilesController.disabledLinkPublic": {
+        "name": "FilesController.disabledLinkPublic",
+        "url": "api/files/:id/disabledLinkPublic",
+        "description": "desactivar link público del archivo",
+        "action": "PUT"
+    },
+    "PublicsController.handle": {
+        "name": "PublicsController.handle",
+        "url": "public",
+        "description": "Obtener archivos publicos",
+        "action": "GET"
+    }
+}
