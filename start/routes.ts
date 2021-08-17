@@ -1,19 +1,9 @@
 
-import Route from '../app/Helpers/RouteHelpers'
+import Route from '@ioc:Adonis/Core/Route';
 
-// Disks
-Route.resolver("get", "DisksController.index")
-Route.resolver("post", "DisksController.store")
 
-// Files
-Route.resolver("get", "FilesController.index").middleware(['disk'])
-Route.resolver("post", "FilesController.store").middleware(['disk'])
-Route.resolver("get", "FilesController.show").middleware(['disk', 'file'])
-Route.resolver("put", "FilesController.update").middleware(['disk', 'file'])
-Route.resolver("delete", "FilesController.delete").middleware(['disk', 'file'])
-Route.resolver("get", "FilesController.binary").middleware(['disk', 'file'])
-Route.resolver("put", "FilesController.enabledLinkPublic").middleware(['disk', 'file'])
-Route.resolver("put", "FilesController.disabledLinkPublic").middleware(['disk', 'file'])
-
-// Public
-Route.resolver("get", "PublicsController.handle");
+Route.get('api/document_types', 'DocumentTypesController.index');
+Route.post('api/document_types', 'DocumentTypesController.store');
+Route.get('api/document_types/:id', 'DocumentTypesController.show');
+Route.put('api/document_types/:id', 'DocumentTypesController.update');
+Route.delete('api/document_types/:id', 'DocumentTypesController.delete');
