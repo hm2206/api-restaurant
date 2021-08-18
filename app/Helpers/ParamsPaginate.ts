@@ -3,7 +3,7 @@ import { RequestContract } from '@ioc:Adonis/Core/Request'
 
 export default class ParamsPaginate {
 
-    protected request
+    protected request: RequestContract;
 
     protected limitPaginate = 200
 
@@ -28,6 +28,10 @@ export default class ParamsPaginate {
 
     public getQuerySearch() {
         return this.query_search
+    }
+
+    public getQuerySearchArray(): any[] {
+        return this.query_search?.toLowerCase()?.split(' ') || [];
     }
 
     public getIds() {

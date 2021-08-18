@@ -3,16 +3,15 @@ import TypeDocument from 'App/Models/TypeDocument';
 import DocumentTypeValidator from 'App/Validators/DocumentTypeValidator';
 import InternalServerErrorException from 'App/Exceptions/InternalServerErrorException';
 import NotFoundException from 'App/Exceptions/NotFoundException';
+import ParamsPaginate from 'App/Helpers/ParamsPaginate';
 
 export default class DocumentTypesController {
 
     public async index({ request } : HttpContextContract) {
-        const page = request.input('page', 1);
-        const per_page = request.input('per_page', 20);
-        const query_search = request.input('query_search', '');
+        const paramsPaginate = new ParamsPaginate(request);
         const type_documents = TypeDocument.query()
-        if (query_search) type_documents.where('name', 'like', `%${query_search}%`);
-        const result = await type_documents.paginate(page, per_page);
+        if (paramsPaginate.getQuerySearch()) type_documents.where('name', 'like', `%${paramsPaginate.getQuerySearch()}%`);
+        const result = await type_documents.paginate(paramsPaginate.getPage(), paramsPaginate.getPerPage());
         return result;
     }
 
@@ -20,7 +19,7 @@ export default class DocumentTypesController {
         const datos: any = await request.validate(DocumentTypeValidator);
         try {
             const type_document = await TypeDocument.create(datos);
-            return type_document.name;
+            return type_document;
         } catch (error) {
             throw new InternalServerErrorException("No se pudó guardar los datos")
         }
