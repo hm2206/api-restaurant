@@ -1,68 +1,77 @@
 {
-    "DisksController.index": {
-        "name": "DisksController.index",
-        "url": "api/disks",
-        "description": "Listar discos",
+    "DocumentTypesController.index": {
+        "url": "api/document_types",
+        "description": "Listar tipo de documentos",
         "action": "GET"
     },
-    "DisksController.store": {
-        "name": "DisksController.store",
-        "url": "api/disks",
-        "description": "Crear discos",
+    "DocumentTypesController.store": {
+        "url": "api/document_types",
+        "description": "Create tipo de documento",
         "action": "POST"
     },
-    "FilesController.index": {
-        "name": "FilesController.index",
-        "url": "api/files",
-        "description": "Listar archivos",
+    "DocumentTypesController.show": {
+        "url": "api/document_types/:id",
+        "description": "Obtener el tipo de documento",
         "action": "GET"
     },
-    "FilesController.store": {
-        "name": "FilesController.store",
-        "url": "api/files",
-        "description": "Crear Archivo",
-        "action": "GET"
-    },
-    "FilesController.show": {
-        "name": "FilesController.show",
-        "url": "api/files/:id",
-        "description": "Obtener Archivo",
-        "action": "GET"
-    },
-    "FilesController.update": {
-        "name": "FilesController.update",
-        "url": "api/files/:id",
-        "description": "Actualizar Archivo",
+    "DocumentTypesController.update": {
+        "url": "api/document_types/:id",
+        "description": "Actualizar el tipo de documento",
         "action": "PUT"
     },
-    "FilesController.delete": {
-        "name": "FilesController.delete",
-        "url": "api/files/:id",
-        "description": "Eliminar Archivo",
+    "DocumentTypesController.delete": {
+        "url": "api/document_types/:id",
+        "description": "Eliminar el tipo de documento",
         "action": "DELETE"
     },
-    "FilesController.binary": {
-        "name": "FilesController.binary",
-        "url": "api/files/:id/binary",
-        "description": "Obtener Archivo en binario",
+    "PeopleController.index": {
+        "url": "api/people",
+        "description": "Listar personas",
         "action": "GET"
     },
-    "FilesController.enabledLinkPublic": {
-        "name": "FilesController.enabledLinkPublic",
-        "url": "api/files/:id/enabledLinkPublic",
-        "description": "activar link público del archivo",
-        "action": "PUT"
+    "PeopleController.store": {
+        "url": "api/people",
+        "description": "Create persona",
+        "action": "POST"
     },
-    "FilesController.disabledLinkPublic": {
-        "name": "FilesController.disabledLinkPublic",
-        "url": "api/files/:id/disabledLinkPublic",
-        "description": "desactivar link público del archivo",
-        "action": "PUT"
-    },
-    "PublicsController.handle": {
-        "name": "PublicsController.handle",
-        "url": "public",
-        "description": "Obtener archivos publicos",
+    "PeopleController.show": {
+        "url": "api/people/:id",
+        "description": "Obtener a la persona",
         "action": "GET"
+    },
+    "PeopleController.update": {
+        "url": "api/people/:id",
+        "description": "Actualizar datos de la persona",
+        "action": "PUT"
+    },
+    "PeopleController.delete": {
+        "url": "api/people/:id",
+        "description": "Eliminar persona",
+        "action": "DELETE"
+    },
+    "SystemsController.index": {
+        "url": "api/systems",
+        "description": "Listar sistemas",
+        "action": "GET"
+    },
+    "SystemsController.store": {
+        "url": "api/systems",
+        "description": "Create sistema",
+        "action": "POST"
+    },
+    "SystemsController.show": {
+        "url": "api/systems/:id",
+        "description": "Obtener sistema",
+        "action": "GET"
+    },
+    "SystemsController.update": {
+        "url": "api/systems/:id",
+        "description": "Actualizar sistema",
+        "action": "PUT"
+    },
+    "SystemsController.delete": {
+        "url": "api/systems/:id",
+        "description": "Eliminar sistema",
+        "action": "DELETE"
     }
 }

@@ -1,24 +1,23 @@
 
-import Route from '@ioc:Adonis/Core/Route';
+import Route from "App/Helpers/RouteHelpers";
 
 //  Document Types
-Route.get('api/document_types', 'DocumentTypesController.index');
-Route.post('api/document_types', 'DocumentTypesController.store');
-Route.get('api/document_types/:id', 'DocumentTypesController.show');
-Route.put('api/document_types/:id', 'DocumentTypesController.update');
-Route.delete('api/document_types/:id', 'DocumentTypesController.delete');
-
+Route.resolver('get', 'DocumentTypesController.index');
+Route.resolver('post', 'DocumentTypesController.store');
+Route.resolver('get', 'DocumentTypesController.show');
+Route.resolver('put', 'DocumentTypesController.update');
+Route.resolver('delete', 'DocumentTypesController.delete');
 
 // Person
-Route.get('api/people', 'PeopleController.index');
-Route.post('api/people', 'PeopleController.store');
-Route.get('api/people/:id', 'PeopleController.show');
-Route.put('api/people/:id', 'PeopleController.update');
-Route.delete('api/people/:id', 'PeopleController.delete');
+Route.resolver('get', 'PeopleController.index');
+Route.resolver('post', 'PeopleController.store');
+Route.resolver('get', 'PeopleController.show');
+Route.resolver('put', 'PeopleController.update');
+Route.resolver('delete', 'PeopleController.delete');
 
 // System
-Route.get('api/systems', 'SystemsController.index');
-Route.post('api/systems', 'SystemsController.store');
-Route.get('api/systems/:id', 'SystemsController.show');
-Route.put('api/systems/:id', 'SystemsController.update');
-Route.delete('api/systems/:id', 'SystemsController.delete');
+Route.resolver('get', 'SystemsController.index');
+Route.resolver('post', 'SystemsController.store');
+Route.resolver('get', 'SystemsController.show');
+Route.resolver('put', 'SystemsController.update');
+Route.resolver('delete', 'SystemsController.delete');
