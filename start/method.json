@@ -73,5 +73,35 @@
         "url": "api/systems/:id",
         "description": "Eliminar sistema",
         "action": "DELETE"
+    },
+    "UsersController.index": {
+        "url": "api/users",
+        "description": "Listar usuarios",
+        "action": "GET"
+    },
+    "UsersController.store": {
+        "url": "api/users",
+        "description": "Crear usuario",
+        "action": "POST"
+    },
+    "UsersController.show": {
+        "url": "api/users/:id",
+        "description": "Obtener usuario",
+        "action": "POST"
+    },
+    "UsersController.update": {
+        "url": "api/users/:id",
+        "description": "Actualizar usuario",
+        "action": "PUT"
+    },
+    "UsersController.delete": {
+        "url": "api/users/:id",
+        "description": "Eliminar usuario",
+        "action": "DELETE"
+    },
+    "LoginController.login": {
+        "url": "api/login",
+        "description": "Autenticar a un usuario",
+        "action": "POST"
     }
 }

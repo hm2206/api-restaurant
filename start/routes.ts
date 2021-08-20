@@ -21,3 +21,13 @@ Route.resolver('post', 'SystemsController.store');
 Route.resolver('get', 'SystemsController.show');
 Route.resolver('put', 'SystemsController.update');
 Route.resolver('delete', 'SystemsController.delete');
+
+// User
+Route.resolver('get', 'UsersController.index');
+Route.resolver('post', 'UsersController.store');
+Route.resolver('get', 'UsersController.show');
+Route.resolver('put', 'UsersController.update');
+Route.resolver('delete', 'UsersController.delete');
+
+// Login
+Route.resolver('post', 'LoginController.login');

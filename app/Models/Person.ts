@@ -14,8 +14,8 @@ export default class Person extends BaseModel {
   @column()
   public ape_mat: string 
 
-  @column()
-  public date_birth: string 
+  @column.date()
+  public date_birth: DateTime
 
   @column()
   public gender: string

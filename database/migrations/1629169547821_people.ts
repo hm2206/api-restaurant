@@ -13,6 +13,8 @@ export default class People extends BaseSchema {
       table.enum('gender', ['M', 'F']).notNullable()
       table.integer('type_document_id').notNullable()
       table.string('document_number').notNullable().unique()
+      table.string('address');
+      table.string('phone');
       table.boolean('state').defaultTo(true)
 
       /**
