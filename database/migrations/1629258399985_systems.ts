@@ -6,7 +6,7 @@ export default class Systems extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-      table.string('token').unique();
+      table.string('token').unique().notNullable();
       table.string('name').unique();
       table.text('description');
       table.string('email').unique();

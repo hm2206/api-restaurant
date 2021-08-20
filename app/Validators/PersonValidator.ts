@@ -3,10 +3,8 @@ import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class PersonValidator {
 
-	private id: any = null;
-
 	constructor (protected ctx: HttpContextContract, id: any = null) {
-		this.id = id;
+		if (id) this.formatSchemaUpdate(id);
 	}
 
 	private formatSchema = {
@@ -26,7 +24,7 @@ export default class PersonValidator {
 			rules.required()
 		]),
 
-		document_number: schema.string({}, [
+		document_number: schema.string({ trim: true }, [
 			rules.required(),
 			rules.minLength(8),
 			rules.unique({ table: 'people', column: 'document_number' }),
@@ -35,16 +33,19 @@ export default class PersonValidator {
 
 	public schema = schema.create(this.formatSchema)
 
-	public getSchemaUpdate() {
-		// modificar document_number
-		this.formatSchema.document_number = schema.string({}, [
-			rules.required(),
-			rules.minLength(8),
-			rules.unique({ table: 'people', column: 'document_number', whereNot: { "id": this.id } }),
-		])
-		// objecto schema
-		return schema.create(this.formatSchema);
+	public messages = {}
+
+	private formatSchemaUpdate(id: any) {
+		let formatUpdate = {
+			document_number: schema.string({ trim: true }, [
+				rules.required(),
+				rules.minLength(8),
+				rules.unique({ table: 'people', column: 'document_number', whereNot: { id } }),
+			])
+		}
+
+		this.formatSchema = Object.assign(this.formatSchema, formatUpdate);
+		this.schema = schema.create(this.formatSchema);
 	}
 
-  	public messages = {}
 }

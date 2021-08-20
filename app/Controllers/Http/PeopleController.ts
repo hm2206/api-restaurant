@@ -41,9 +41,7 @@ export default class PeopleController {
 
     public async update(ctx: HttpContextContract) {
         const { params, request } = ctx;
-        const validationPerson = new PersonValidator(ctx, params.id);
-        const schemaPerson = await validationPerson.getSchemaUpdate();
-        const payload: any = await request.validate({ schema: schemaPerson });
+        const payload: any = await request.validate(new PersonValidator(ctx, params.id));
         payload.date_birth = moment(payload.date_birth).format('YYYY-MM-DD');
         const person = await Person.find(params.id);
         if (!person) throw new NotFoundException("La persona");
