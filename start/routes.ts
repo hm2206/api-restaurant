@@ -22,6 +22,13 @@ Route.resolver('get', 'SystemsController.show');
 Route.resolver('put', 'SystemsController.update');
 Route.resolver('delete', 'SystemsController.delete');
 
+// Clients
+Route.resolver('get', 'ClientsController.index');
+Route.resolver('post', 'ClientsController.store');
+Route.resolver('get', 'ClientsController.show');
+Route.resolver('put', 'ClientsController.update');
+Route.resolver('delete', 'ClientsController.delete');
+
 // User
 Route.resolver('get', 'UsersController.index');
 Route.resolver('post', 'UsersController.store');

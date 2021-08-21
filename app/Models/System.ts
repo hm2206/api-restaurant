@@ -35,4 +35,5 @@ export default class System extends BaseModel {
     let token = new ObjectID()
     system.token = token.toHexString();
   }
+  
 }

@@ -74,6 +74,31 @@
         "description": "Eliminar sistema",
         "action": "DELETE"
     },
+    "ClientsController.index": {
+        "url": "api/clients",
+        "description": "Listar dispositivos del cliente",
+        "action": "GET"
+    },
+    "ClientsController.store": {
+        "url": "api/clients",
+        "description": "Crear dispositivos del cliente",
+        "action": "POST"
+    },
+    "ClientsController.show": {
+        "url": "api/clients/:id",
+        "description": "Obtener dispositivo del cliente",
+        "action": "GET"
+    },
+    "ClientsController.update": {
+        "url": "api/clients/:id",
+        "description": "Actualizar dispositivo del cliente",
+        "action": "PUT"
+    },
+    "ClientsController.delete": {
+        "url": "api/clients/:id",
+        "description": "Eliminar dispositivo del cliente",
+        "action": "DELETE"
+    },
     "UsersController.index": {
         "url": "api/users",
         "description": "Listar usuarios",
