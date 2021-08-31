@@ -128,5 +128,10 @@
         "url": "api/login",
         "description": "Autenticar a un usuario",
         "action": "POST"
+    },
+    "AuthController.me": {
+        "url": "api/auth/me",
+        "description": "Obtener usuario autenticado",
+        "action": "GET"
     }
 }

@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, computed } from '@ioc:Adonis/Lucid/Orm'
 
 export default class Person extends BaseModel {
   @column({ isPrimary: true })
@@ -28,6 +28,11 @@ export default class Person extends BaseModel {
 
   @column()
   public state: boolean
+
+  @computed()
+  public get fullname() {
+    return `${this.ape_pat} ${this.ape_mat}, ${this.name}`
+  }
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime

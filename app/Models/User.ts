@@ -1,9 +1,12 @@
 import { DateTime } from 'luxon'
 import Hash from '@ioc:Adonis/Core/Hash'
+import Person from 'App/Models/Person'
 import {
   column,
   beforeSave,
   BaseModel,
+  belongsTo,
+  BelongsTo,
 } from '@ioc:Adonis/Lucid/Orm'
 
 export default class User extends BaseModel {
@@ -23,13 +26,16 @@ export default class User extends BaseModel {
   public rememberMeToken?: string
 
   @column()
-  public person_id: number
+  public personId: number
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
+
+  @belongsTo(() => Person)
+  public person: BelongsTo<typeof Person>
 
   @beforeSave()
   public static async hashPassword (user: User) {

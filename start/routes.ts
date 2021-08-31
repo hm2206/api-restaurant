@@ -38,3 +38,6 @@ Route.resolver('delete', 'UsersController.delete');
 
 // Login
 Route.resolver('post', 'LoginController.login');
+
+// Auth
+Route.resolver('get', 'AuthController.me').middleware('auth');
