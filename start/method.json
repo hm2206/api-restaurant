@@ -129,6 +129,11 @@
         "description": "Autenticar a un usuario",
         "action": "POST"
     },
+    "LoginController.logout": {
+        "url": "api/logout",
+        "description": "Cerrar sesión a un usuario",
+        "action": "POST"
+    },
     "AuthController.me": {
         "url": "api/auth/me",
         "description": "Obtener usuario autenticado",

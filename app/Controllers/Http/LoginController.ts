@@ -29,4 +29,9 @@ export default class LoginController {
         return token;
     }
 
+    public async logout({ auth }: HttpContextContract) {
+        await auth.logout();
+        return { revoked: true }
+    }
+
 }
