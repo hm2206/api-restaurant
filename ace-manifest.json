@@ -1,5 +1,17 @@
 {
   "commands": {
+    "installer:method": {
+      "settings": {
+        "loadApp": true,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/InstallerMethod",
+      "commandName": "installer:method",
+      "description": "Instalar los método del sistema",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
     "dump:rcfile": {
       "settings": {},
       "commandPath": "@adonisjs/core/commands/DumpRc",

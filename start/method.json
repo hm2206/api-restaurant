@@ -3,168 +3,168 @@
         "url": "api/document_types",
         "description": "Listar tipo de documentos",
         "required": false,
-        "action": "GET"
+        "action_type": "GET"
     },
     "DocumentTypesController.store": {
         "url": "api/document_types",
         "description": "Create tipo de documento",
         "required": true,
-        "action": "POST"
+        "action_type": "POST"
     },
     "DocumentTypesController.show": {
         "url": "api/document_types/:id",
         "description": "Obtener el tipo de documento",
         "required": false,
-        "action": "GET"
+        "action_type": "GET"
     },
     "DocumentTypesController.update": {
         "url": "api/document_types/:id",
         "description": "Actualizar el tipo de documento",
         "required": true,
-        "action": "PUT"
+        "action_type": "PUT"
     },
     "DocumentTypesController.delete": {
         "url": "api/document_types/:id",
         "description": "Eliminar el tipo de documento",
         "required": true,
-        "action": "DELETE"
+        "action_type": "DELETE"
     },
     "PeopleController.index": {
         "url": "api/people",
         "description": "Listar personas",
         "required": false,
-        "action": "GET"
+        "action_type": "GET"
     },
     "PeopleController.store": {
         "url": "api/people",
         "description": "Create persona",
         "required": true,
-        "action": "POST"
+        "action_type": "POST"
     },
     "PeopleController.show": {
         "url": "api/people/:id",
         "description": "Obtener a la persona",
         "required": false,
-        "action": "GET"
+        "action_type": "GET"
     },
     "PeopleController.update": {
         "url": "api/people/:id",
         "description": "Actualizar datos de la persona",
         "required": true,
-        "action": "PUT"
+        "action_type": "PUT"
     },
     "PeopleController.delete": {
         "url": "api/people/:id",
         "description": "Eliminar persona",
         "required": true,
-        "action": "DELETE"
+        "action_type": "DELETE"
     },
     "SystemsController.index": {
         "url": "api/systems",
         "description": "Listar sistemas",
         "required": false,
-        "action": "GET"
+        "action_type": "GET"
     },
     "SystemsController.store": {
         "url": "api/systems",
         "description": "Create sistema",
         "required": true,
-        "action": "POST"
+        "action_type": "POST"
     },
     "SystemsController.show": {
         "url": "api/systems/:id",
         "description": "Obtener sistema",
         "required": false,
-        "action": "GET"
+        "action_type": "GET"
     },
     "SystemsController.update": {
         "url": "api/systems/:id",
         "description": "Actualizar sistema",
         "required": true,
-        "action": "PUT"
+        "action_type": "PUT"
     },
     "SystemsController.delete": {
         "url": "api/systems/:id",
         "description": "Eliminar sistema",
         "required": true,
-        "action": "DELETE"
+        "action_type": "DELETE"
     },
     "ClientsController.index": {
         "url": "api/clients",
         "description": "Listar dispositivos del cliente",
         "required": false,
-        "action": "GET"
+        "action_type": "GET"
     },
     "ClientsController.store": {
         "url": "api/clients",
         "description": "Crear dispositivos del cliente",
         "required": true,
-        "action": "POST"
+        "action_type": "POST"
     },
     "ClientsController.show": {
         "url": "api/clients/:id",
         "description": "Obtener dispositivo del cliente",
         "required": false,
-        "action": "GET"
+        "action_type": "GET"
     },
     "ClientsController.update": {
         "url": "api/clients/:id",
         "description": "Actualizar dispositivo del cliente",
         "required": true,
-        "action": "PUT"
+        "action_type": "PUT"
     },
     "ClientsController.delete": {
         "url": "api/clients/:id",
         "description": "Eliminar dispositivo del cliente",
         "required": true,
-        "action": "DELETE"
+        "action_type": "DELETE"
     },
     "UsersController.index": {
         "url": "api/users",
         "description": "Listar usuarios",
         "required": false,
-        "action": "GET"
+        "action_type": "GET"
     },
     "UsersController.store": {
         "url": "api/users",
         "description": "Crear usuario",
         "required": true,
-        "action": "POST"
+        "action_type": "POST"
     },
     "UsersController.show": {
         "url": "api/users/:id",
         "description": "Obtener usuario",
         "required": false,
-        "action": "POST"
+        "action_type": "POST"
     },
     "UsersController.update": {
         "url": "api/users/:id",
         "description": "Actualizar usuario",
         "required": true,
-        "action": "PUT"
+        "action_type": "PUT"
     },
     "UsersController.delete": {
         "url": "api/users/:id",
         "description": "Eliminar usuario",
         "required": true,
-        "action": "DELETE"
+        "action_type": "DELETE"
     },
     "LoginController.login": {
         "url": "api/login",
         "description": "Autenticar a un usuario",
         "required": false,
-        "action": "POST"
+        "action_type": "POST"
     },
     "LoginController.logout": {
         "url": "api/logout",
         "description": "Cerrar sesión a un usuario",
         "required": false,
-        "action": "POST"
+        "action_type": "POST"
     },
     "AuthController.me": {
         "url": "api/auth/me",
         "description": "Obtener usuario autenticado",
         "required": false,
-        "action": "GET"
+        "action_type": "GET"
     }
 }
