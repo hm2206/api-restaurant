@@ -40,6 +40,7 @@ export default class ExceptionHandler extends HttpExceptionHandler {
     }
     // response
     ctx.response.status(status).send({
+      status,
       code,
       message,
       errors

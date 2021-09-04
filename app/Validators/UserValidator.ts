@@ -31,6 +31,10 @@ export default class UserValidator {
 
 	private formatSchemaUpdate(id: any) {
 		let formatUpdate = {
+			roleId: schema.number([
+				rules.required()
+			]),
+
 			username: schema.string({ trim: true }, [
 				rules.unique({ table: "users", column: "username", whereNot: { id } })
 			]),

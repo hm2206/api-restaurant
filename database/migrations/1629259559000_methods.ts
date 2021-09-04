@@ -11,6 +11,7 @@ export default class Methods extends BaseSchema {
       table.string('description').notNullable();
       table.string('url').notNullable();
       table.enum('action_type', ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']);
+      table.boolean('required').notNullable().defaultTo(false)
       table.boolean('state').defaultTo(true);
       table.unique(['system_id', 'name']);
 

@@ -1,9 +1,10 @@
 import { DateTime } from 'luxon'
-import Hash from '@ioc:Adonis/Core/Hash'
 import Person from 'App/Models/Person'
+import UserHook from './hooks/UserHook'
 import {
   column,
   beforeSave,
+  beforeCreate,
   BaseModel,
   belongsTo,
   BelongsTo,
@@ -28,6 +29,9 @@ export default class User extends BaseModel {
   @column()
   public personId: number
 
+  @column()
+  public roleId: number
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 
@@ -38,9 +42,13 @@ export default class User extends BaseModel {
   public person: BelongsTo<typeof Person>
 
   @beforeSave()
-  public static async hashPassword (user: User) {
-    if (user.$dirty.password) {
-      user.password = await Hash.make(user.password)
-    }
+  public static async hashPassword(user: User) {
+    await UserHook.hashPassword(user)
   }
+
+  @beforeCreate()
+  public static async defaultRole(user: User) {
+    await UserHook.defaultRole(user)
+  }
+
 }
