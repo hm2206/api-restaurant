@@ -4,6 +4,9 @@ import ParamsPaginate from 'App/Helpers/ParamsPaginate';
 import UserValidator from 'App/Validators/UserValidator'
 import User from 'App/Models/User';
 import NotFoundException from 'App/Exceptions/NotFoundException';
+import UserEntity from 'App/Entities/UserEntity';
+import Role from 'App/Models/Role';
+import Person from 'App/Models/Person';
 
 export default class UsersController {
 
@@ -16,13 +19,11 @@ export default class UsersController {
     }
 
     public async store({ request }: HttpContextContract) {
-        const payload = await request.validate(UserValidator);
-        try {
-            const user = await User.create(payload)
-            return user;
-        } catch (error) {
-            throw new InternalServerErrorException("No se pudo guardar los datos")
-        }
+        const payload:any = await request.validate(UserValidator);
+        const person = await Person.findOrFail(payload.personId);
+        const role = await Role.findOrFail(payload.roleId);
+        const user = await UserEntity.store(payload, person, role)
+        return user;
     }
 
     public async show({ params }: HttpContextContract) {

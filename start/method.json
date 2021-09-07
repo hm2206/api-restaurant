@@ -166,5 +166,11 @@
         "description": "Obtener usuario autenticado",
         "required": false,
         "action_type": "GET"
+    },
+    "Public/UsersController.store": {
+        "url": "api/public/users",
+        "description": "Crear un usuario predeterminado",
+        "required": false,
+        "action_type": "GET"
     }
 }

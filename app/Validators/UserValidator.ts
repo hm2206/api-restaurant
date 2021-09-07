@@ -20,9 +20,13 @@ export default class UserValidator {
 			rules.minLength(8)
 		]),
 
-		person_id: schema.number([
+		personId: schema.number([
 			rules.required()
-		])
+		]),
+
+		roleId: schema.number([
+			rules.required()
+		]),
 	}
 
 	public schema = schema.create(this.formatSchema);
@@ -31,10 +35,6 @@ export default class UserValidator {
 
 	private formatSchemaUpdate(id: any) {
 		let formatUpdate = {
-			roleId: schema.number([
-				rules.required()
-			]),
-
 			username: schema.string({ trim: true }, [
 				rules.unique({ table: "users", column: "username", whereNot: { id } })
 			]),

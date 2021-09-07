@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon'
 import Person from 'App/Models/Person'
+import Role from 'App/Models/Role'
 import UserHook from './hooks/UserHook'
 import {
   column,
@@ -40,6 +41,9 @@ export default class User extends BaseModel {
 
   @belongsTo(() => Person)
   public person: BelongsTo<typeof Person>
+
+  @belongsTo(() => Role)
+  public role: BelongsTo<typeof Role>
 
   @beforeSave()
   public static async hashPassword(user: User) {

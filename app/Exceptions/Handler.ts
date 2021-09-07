@@ -18,6 +18,7 @@ import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import HttpExceptionHandler from '@ioc:Adonis/Core/HttpExceptionHandler'
 import PaymentItem from 'App/Helpers/PaymentItem'
 import PaymentRequiredException from './PaymentRequiredException'
+import NotFoundException from './NotFoundException'
 
 export default class ExceptionHandler extends HttpExceptionHandler {
   constructor () {
@@ -33,6 +34,7 @@ export default class ExceptionHandler extends HttpExceptionHandler {
     // custimizar errors
     try {
       if (code == 'E_VALIDATION_FAILURE') this.handleErrors(error?.messages?.errors || [])
+      if (code == 'E_ROW_NOT_FOUND') throw new NotFoundException("El objecto")
     } catch (newError) {
       code = newError.code;
       message = newError.message;
