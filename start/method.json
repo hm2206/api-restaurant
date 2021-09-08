@@ -172,5 +172,17 @@
         "description": "Crear un usuario predeterminado",
         "required": false,
         "action_type": "GET"
+    },
+    "Public/UsersController.resetPassword": {
+        "url": "api/public/users/:email/reset_password",
+        "description": "Recuperar cuenta de un usuario",
+        "required": false,
+        "action_type": "PUT"
+    },
+    "Public/UsersController.changePassword": {
+        "url": "api/public/users/:email/change_password",
+        "description": "Cambio de cuenta de un usuario con código",
+        "required": false,
+        "action_type": "PUT"
     }
 }
