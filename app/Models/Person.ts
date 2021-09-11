@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column, computed } from '@ioc:Adonis/Lucid/Orm'
+import moment from 'moment'
 
 export default class Person extends BaseModel {
   @column({ isPrimary: true })
@@ -32,6 +33,13 @@ export default class Person extends BaseModel {
   @computed()
   public get fullname() {
     return `${this.ape_pat} ${this.ape_mat}, ${this.name}`
+  }
+
+  @computed()
+  public get age() {
+    let date_string:any = this.date_birth;
+    if (typeof date_string == 'object') date_string = date_string.toSQLDate();
+    return moment().diff(date_string, 'years', false);
   }
 
   @column.dateTime({ autoCreate: true })
