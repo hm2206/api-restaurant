@@ -1,6 +1,5 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column, computed } from '@ioc:Adonis/Lucid/Orm'
-import moment from 'moment'
 
 export default class Person extends BaseModel {
   @column({ isPrimary: true })
@@ -28,6 +27,12 @@ export default class Person extends BaseModel {
   public document_number: string 
 
   @column()
+  public address: string
+
+  @column()
+  public phone: string
+
+  @column()
   public state: boolean
 
   @computed()
@@ -37,9 +42,9 @@ export default class Person extends BaseModel {
 
   @computed()
   public get age() {
-    let date_string:any = this.date_birth;
-    if (typeof date_string == 'object') date_string = date_string.toSQLDate();
-    return moment().diff(date_string, 'years', false);
+    const currentDate = DateTime.now();
+    let resultDate = `${currentDate.diff(this.date_birth, 'years').years}`;
+    return parseInt(resultDate);
   }
 
   @column.dateTime({ autoCreate: true })
