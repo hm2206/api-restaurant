@@ -17,14 +17,15 @@ export default class UserValidator {
 		]),
 
 		password: schema.string({ trim: true }, [
-			rules.minLength(8)
+			rules.minLength(8),
+			rules.confirmed()
 		]),
 
-		personId: schema.number([
+		person_id: schema.number([
 			rules.required()
 		]),
 
-		roleId: schema.number([
+		role_id: schema.number([
 			rules.required()
 		]),
 	}
@@ -34,7 +35,8 @@ export default class UserValidator {
 	public messages = {}
 
 	private formatSchemaUpdate(id: any) {
-		let formatUpdate = {
+
+		let formatUpdate: any = {
 			username: schema.string({ trim: true }, [
 				rules.unique({ table: "users", column: "username", whereNot: { id } })
 			]),
@@ -42,9 +44,21 @@ export default class UserValidator {
 			email: schema.string({ trim: true }, [
 				rules.email(),
 				rules.unique({ table: "users", column: "email", whereNot: { id } })
-			])
+			]),
+
+			role_id: schema.number([
+				rules.required()
+			]),
 		}
 
+		let isModifyPassword = this.ctx.request.input('password');
+
+		if (isModifyPassword) {
+			formatUpdate.password = schema.string({ trim: true }, [
+				rules.minLength(8),
+				rules.confirmed(),
+			])
+		}
 
 		this.formatSchema = formatUpdate;
 		this.schema = schema.create(this.formatSchema);

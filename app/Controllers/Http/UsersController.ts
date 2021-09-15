@@ -35,7 +35,6 @@ export default class UsersController {
     public async update(ctx: HttpContextContract) {
         const { params, request } = ctx;
         const payload = await request.validate(new UserValidator(ctx, params.id))
-        payload.roleId = request.input('roleId', null)
         const user = await User.find(params.id);
         if (!user) throw new NotFoundException("El usuario");
         try {
