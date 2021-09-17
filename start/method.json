@@ -191,6 +191,12 @@
         "required": false,
         "action_type": "GET"
     },
+    "AuthController.authorize": {
+        "url": "api/auth/authorize",
+        "description": "Obtener autorizaciónes del usuario autenticado",
+        "required": false,
+        "action_type": "GET"
+    },
     "Public/UsersController.store": {
         "url": "api/public/users",
         "description": "Crear un usuario predeterminado",

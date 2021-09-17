@@ -47,3 +47,4 @@ Route.resolver('post', 'LoginController.logout').middleware('auth');
 
 // Auth
 Route.resolver('get', 'AuthController.me').middleware('auth');
+Route.resolver('get', 'AuthController.authorize').middleware('auth');
