@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, afterSave } from '@ioc:Adonis/Lucid/Orm'
+import RoleHook from './hooks/RoleHook'
 
 export default class Role extends BaseModel {
   @column({ isPrimary: true })
@@ -19,4 +20,10 @@ export default class Role extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
+
+  @afterSave()
+  public static async varifyDefault(role: Role) {
+    await RoleHook.verifyDefault(role);
+  }
+
 }

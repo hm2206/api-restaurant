@@ -1,11 +1,9 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import ParamsPaginate from 'App/Helpers/ParamsPaginate'
 import PersonValidator from 'App/Validators/PersonValidator'
-import moment from 'moment'
 import Person from 'App/Models/Person'
 import InternalServerErrorException from 'App/Exceptions/InternalServerErrorException'
 import NotFoundException from 'App/Exceptions/NotFoundException'
-import User from 'App/Models/User'
 
 export default class PeopleController {
 

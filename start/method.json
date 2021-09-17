@@ -119,6 +119,30 @@
         "required": true,
         "action_type": "DELETE"
     },
+    "RolesController.index": {
+        "url": "api/roles",
+        "description": "Listar roles de usuarios",
+        "required": false,
+        "action_type": "GET"
+    },
+    "RolesController.store": {
+        "url": "api/roles",
+        "description": "Crear role de usuario",
+        "required": true,
+        "action_type": "POST"
+    },
+    "RolesController.update": {
+        "url": "api/roles/:id",
+        "description": "Actualizar role de usuario",
+        "required": true,
+        "action_type": "PUT"
+    },
+    "RolesController.delete": {
+        "url": "api/roles/:id",
+        "description": "Eliminar role de usuario",
+        "required": true,
+        "action_type": "DELETE"
+    },
     "UsersController.index": {
         "url": "api/users",
         "description": "Listar usuarios",

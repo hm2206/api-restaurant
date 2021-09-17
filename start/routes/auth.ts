@@ -28,6 +28,12 @@ Route.resolver('get', 'ClientsController.show').middleware('auth');
 Route.resolver('put', 'ClientsController.update').middleware('auth');
 Route.resolver('delete', 'ClientsController.delete').middleware('auth');
 
+// Roles
+Route.resolver('get', 'RolesController.index').middleware('auth');
+Route.resolver('post', 'RolesController.store').middleware('auth');
+Route.resolver('put', 'RolesController.update').middleware('auth');
+Route.resolver('delete', 'RolesController.delete').middleware('auth');
+
 // User
 Route.resolver('get', 'UsersController.index').middleware('auth');
 Route.resolver('post', 'UsersController.store').middleware('auth');
