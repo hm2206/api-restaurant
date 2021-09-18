@@ -33,6 +33,8 @@ Route.resolver('get', 'RolesController.index').middleware('auth');
 Route.resolver('post', 'RolesController.store').middleware('auth');
 Route.resolver('put', 'RolesController.update').middleware('auth');
 Route.resolver('delete', 'RolesController.delete').middleware('auth');
+Route.resolver('get', 'RolesController.methods').middleware('auth');
+Route.resolver('delete', 'RolesController.detachMethod').middleware('auth');
 
 // User
 Route.resolver('get', 'UsersController.index').middleware('auth');

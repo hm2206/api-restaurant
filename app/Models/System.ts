@@ -9,7 +9,7 @@ export default class System extends BaseModel {
   @column()
   public name: string
 
-  @column() 
+  @column({ serializeAs: null }) 
   public token: string
 
   @column()

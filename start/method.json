@@ -143,6 +143,18 @@
         "required": true,
         "action_type": "DELETE"
     },
+    "RolesController.methods": {
+        "url": "api/roles/:id/methods",
+        "description": "Listar métodos de accesso según el rol",
+        "required": true,
+        "action_type": "GET"
+    },
+    "RolesController.detachMethod": {
+        "url": "api/roles/:id/detach_method",
+        "description": "Asociar un method a un rol específico",
+        "required": true,
+        "action_type": "DELETE"
+    },
     "UsersController.index": {
         "url": "api/users",
         "description": "Listar usuarios",

@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, afterSave } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, afterSave, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm'
 import RoleHook from './hooks/RoleHook'
+import Method from './Method'
 
 export default class Role extends BaseModel {
   @column({ isPrimary: true })
@@ -25,5 +26,10 @@ export default class Role extends BaseModel {
   public static async varifyDefault(role: Role) {
     await RoleHook.verifyDefault(role);
   }
+
+  @manyToMany(() => Method, {
+    pivotTable: 'allows'
+  })
+  public methods: ManyToMany<typeof Method>
 
 }
