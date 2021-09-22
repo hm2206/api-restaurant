@@ -1,0 +1,8 @@
+{
+    "DocumentTypesController.index": {
+        "url": "api/document_types",
+        "description": "Listar tipo de documentos",
+        "required": false,
+        "action_type": "GET"
+    }
+}

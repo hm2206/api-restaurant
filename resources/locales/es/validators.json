@@ -1,0 +1,5 @@
+{
+    "required": "El campo {{ field }} es requerido",
+    "fileRequired": "El archivo es requerido",
+    "fileFormat": "El formato del archivo es incorrecto"
+}
