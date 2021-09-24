@@ -14,6 +14,7 @@ export default class Boards extends BaseSchema {
         .references('id')
         .inTable('restaurants');
       table.boolean('state').defaultTo(true);
+      table.unique(['number', 'restaurant_id']);
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */

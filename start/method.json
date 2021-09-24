@@ -28,5 +28,35 @@
         "description": "Eliminar Restaurante",
         "required": true,
         "action_type": "DELETE"
+    },
+    "BoardsController.index": {
+        "url": "api/boards",
+        "description": "Listar Mesas",
+        "required": true,
+        "action_type": "GET"
+    },
+    "BoardsController.store": {
+        "url": "api/boards",
+        "description": "Guardar Mesa",
+        "required": true,
+        "action_type": "POST"
+    },
+    "BoardsController.show": {
+        "url": "api/boards/:id",
+        "description": "Obtener Mesa",
+        "required": true,
+        "action_type": "GET"
+    },
+    "BoardsController.update": {
+        "url": "api/boards/:id",
+        "description": "Actualizar Mesa",
+        "required": true,
+        "action_type": "PUT"
+    },
+    "BoardsController.delete": {
+        "url": "api/boards/:id",
+        "description": "Eliminar Mesa",
+        "required": true,
+        "action_type": "DELETE"
     }
 }
