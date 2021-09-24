@@ -58,5 +58,35 @@
         "description": "Eliminar Mesa",
         "required": true,
         "action_type": "DELETE"
+    },
+    "ProductsController.index": {
+        "url": "api/products",
+        "description": "Listar productos",
+        "required": true,
+        "action_type": "GET"
+    },
+    "ProductsController.store": {
+        "url": "api/products",
+        "description": "Crear producto",
+        "required": true,
+        "action_type": "POST"
+    },
+    "ProductsController.show": {
+        "url": "api/products/:id",
+        "description": "Obtener producto",
+        "required": true,
+        "action_type": "GET"
+    },
+    "ProductsController.update": {
+        "url": "api/products/:id",
+        "description": "Actualizar producto",
+        "required": true,
+        "action_type": "PUT"
+    },
+    "ProductsController.delete": {
+        "url": "api/products/:id",
+        "description": "Eliminar producto",
+        "required": true,
+        "action_type": "DELETE"
     }
 }
