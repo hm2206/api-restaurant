@@ -20,6 +20,7 @@ Route.resolver('post', 'SystemsController.store').middleware('auth');
 Route.resolver('get', 'SystemsController.show').middleware('auth');
 Route.resolver('put', 'SystemsController.update').middleware('auth');
 Route.resolver('delete', 'SystemsController.delete').middleware('auth');
+Route.resolver('get', 'SystemsController.authorize');
 
 // Clients
 Route.resolver('get', 'ClientsController.index').middleware('auth');

@@ -5,7 +5,7 @@ import ObjectId from 'bson-objectid'
 export default class ClientSeedSeeder extends BaseSeeder {
   public async run () {
 
-    Client.truncate();
+    await Client.truncate();
 
     let token = new ObjectId()
 

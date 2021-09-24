@@ -59,4 +59,8 @@ export default class SystemsController {
         }
     }
 
+    public async authorize({ system }: HttpContextContract) {
+        return system;
+    }
+
 }

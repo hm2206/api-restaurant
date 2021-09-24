@@ -89,6 +89,12 @@
         "required": true,
         "action_type": "DELETE"
     },
+    "SystemsController.authorize": {
+        "url": "api/systems/authorize/me",
+        "description": "Obtener sistema autorizado",
+        "required": false,
+        "action_type": "GET"
+    },
     "ClientsController.index": {
         "url": "api/clients",
         "description": "Listar dispositivos del cliente",
