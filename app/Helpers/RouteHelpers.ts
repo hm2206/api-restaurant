@@ -5,11 +5,11 @@ const methods = require('../../start/method.json');
 
 export default class RouteHelpers {
 
-    static resolver(methodHttp: string, handle: string, verify = true): RouteContract {
+    public static resolver(methodHttp: string, handle: string, verify = true): RouteContract {
         let method = methods[handle];
         if (typeof method != 'object') throw new Error("El método es invalido!!!");
         const newRoute: RouteContract = Route[methodHttp](method?.url, handle);
-        if (verify) newRoute.middleware('allow');
+        // if (verify) newRoute.middleware('allow');
         return newRoute
     }
 

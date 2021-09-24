@@ -1,8 +1,32 @@
 {
-    "DocumentTypesController.index": {
-        "url": "api/document_types",
-        "description": "Listar tipo de documentos",
-        "required": false,
+    "RestaurantsController.index": {
+        "url": "api/restaurants",
+        "description": "Listar Restaurantes",
+        "required": true,
         "action_type": "GET"
+    },
+    "RestaurantsController.store": {
+        "url": "api/restaurants",
+        "description": "Crear Restaurante",
+        "required": true,
+        "action_type": "POST"
+    },
+    "RestaurantsController.show": {
+        "url": "api/restaurants/:id",
+        "description": "Obtener Restaurante",
+        "required": true,
+        "action_type": "GET"
+    },
+    "RestaurantsController.update": {
+        "url": "api/restaurants/:id",
+        "description": "Actualizar Restaurante",
+        "required": true,
+        "action_type": "PUT"
+    },
+    "RestaurantsController.delete": {
+        "url": "api/restaurants/:id",
+        "description": "Eliminar Restaurante",
+        "required": true,
+        "action_type": "DELETE"
     }
 }
