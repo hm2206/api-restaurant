@@ -1,7 +1,7 @@
 import Route from 'App/Helpers/RouteHelpers';
 
 // Restaurants
-Route.resolver("get", "RestaurantsController.index");
+Route.resolver("get", "RestaurantsController.index").middleware('jwt');
 Route.resolver("post", "RestaurantsController.store");
 Route.resolver("get", "RestaurantsController.show");
 Route.resolver("put", "RestaurantsController.update");

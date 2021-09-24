@@ -21,8 +21,7 @@ import Server from '@ioc:Adonis/Core/Server'
 |
 */
 Server.middleware.register([
-  () => import('@ioc:Adonis/Core/BodyParser'),
-  () => import('App/Middleware/SilentAuth'),
+  () => import('@ioc:Adonis/Core/BodyParser')
 ])
 
 /*
@@ -42,5 +41,5 @@ Server.middleware.register([
 |
 */
 Server.middleware.registerNamed({
-  
+  jwt: () => import('App/Middleware/Jwt')
 })
