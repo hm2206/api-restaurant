@@ -6,7 +6,7 @@ import RestaurantValidator from 'App/Validators/RestaurantValidator';
 
 export default class RestaurantsController {
 
-    public async index({ request, user }: HttpContextContract) {
+    public async index({ request }: HttpContextContract) {
         const paramsPaginate = new ParamsPaginate(request);
         const restaurants = Restaurant.query();
         if (paramsPaginate.getQuerySearch()) {

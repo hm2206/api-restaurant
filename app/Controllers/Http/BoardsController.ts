@@ -21,7 +21,7 @@ export default class BoardsController {
 
     public async store({ request }: HttpContextContract) {
         const payload: any = await request.validate(BoardValidator);
-        payload.isBusy = true;
+        payload.isBusy = false;
         payload.state = true;
         try {
             const board = await Board.create(payload);

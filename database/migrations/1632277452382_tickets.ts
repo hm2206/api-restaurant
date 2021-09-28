@@ -7,14 +7,14 @@ export default class Tickets extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
       table.string('reservation_number').notNullable().unique();
-      table.date('reservation_date').notNullable().unique();
+      table.date('reservation_date').notNullable();
       table.time('reservation_time').notNullable();
       table.integer('person_id').unsigned().notNullable();
       table.integer('board_id').unsigned()
         .notNullable()
         .references('id')
         .inTable('boards');
-      table.enum('status', ['PENDING', 'PROCESSING', 'CONTINUE', 'CANCEL']);
+      table.enum('status', ['PENDING', 'PROCESSING', 'FINALIZED', 'CANCEL']);
       table.boolean('state').defaultTo(true);
 
       /**

@@ -88,5 +88,25 @@
         "description": "Eliminar producto",
         "required": true,
         "action_type": "DELETE"
+    },
+    "TicketsController.index": {
+        "url": "api/tickets",
+        "required": true,
+        "action_type": "VIEW"
+    },
+    "TicketsController.store": {
+        "url": "api/tickets",
+        "required": true,
+        "action_type": "POST"
+    },
+    "TicketsController.show": {
+        "url": "api/tickets/:id",
+        "required": false,
+        "action_type": "GET"
+    },
+    "TicketsController.delete": {
+        "url": "api/tickets/:id",
+        "required": false,
+        "action_type": "DELETE"
     }
 }

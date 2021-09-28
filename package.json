@@ -35,6 +35,7 @@
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.19",
     "url-join-ts": "^1.0.5",
-    "url-slug": "^3.0.2"
+    "url-slug": "^3.0.2",
+    "uuid": "^8.3.2"
   }
 }
