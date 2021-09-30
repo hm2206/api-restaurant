@@ -7,10 +7,16 @@ import ProductValidator from 'App/Validators/ProductValidator';
 export default class ProductsController {
 
     public async index({ request }: HttpContextContract) {
+        const filters = request.only(['restaurant_id']);
         const paramsPaginate = new ParamsPaginate(request);
-        const products = Product.query()
+        const products = Product.query().preload('restaurant')
         if (paramsPaginate.getQuerySearch()) {
             products.where('name', 'like', `%${paramsPaginate.getQuerySearch()}%`)
+        }
+        // filtro avanzado
+        for (let attr in filters) {
+            let value = filters[attr];
+            if (value) products.where(attr, value);
         }
         // response
         return await products.paginate(
