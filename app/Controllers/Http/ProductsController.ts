@@ -30,6 +30,7 @@ export default class ProductsController {
         payload.state = true;
         try {
             const product = await Product.create(payload);
+            await product.load("restaurant");
             return product;
         } catch (error) {
             throw new InternalServerErrorException("No se pudo guardar los datos")

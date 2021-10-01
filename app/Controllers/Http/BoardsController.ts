@@ -8,7 +8,7 @@ export default class BoardsController {
 
     public async index({ request }: HttpContextContract) {
         const paramsPaginate = new ParamsPaginate(request);
-        const boards = Board.query()
+        const boards = Board.query().preload("restaurant")
         if (paramsPaginate.getQuerySearch()) {
             boards.where('number', 'like', `%${paramsPaginate.getQuerySearch()}%`)
         }
@@ -25,6 +25,7 @@ export default class BoardsController {
         payload.state = true;
         try {
             const board = await Board.create(payload);
+            await board.load("restaurant");
             return board;
         } catch (error) {
             throw new InternalServerErrorException("No se pudo guardar los datos")
