@@ -3,7 +3,7 @@ import { schema, rules } from '@ioc:Adonis/Core/Validator'
 import Hash from '@ioc:Adonis/Core/Hash'
 import User from 'App/Models/User'
 import PaymentRequiredException from '../../Exceptions/PaymentRequiredException';
-import PaymentItem from '../../Helpers/PaymentItem'
+import PaymentItem from '../../Helpers/PaymentItem';
 
 export default class LoginController {
 
